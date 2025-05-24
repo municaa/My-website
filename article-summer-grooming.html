@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Grooming Tips - Pawsome Grooming Services</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: rgba(255, 105, 180, 0.3);
+            --background-dark: rgba(0, 0, 0, 0.8);
+            --background-light: rgba(0, 0, 0, 0.1);
+            --text-color: white;
+            --border-radius: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav {
+            background-color: var(--background-dark);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--background-light);
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .article-header h1 {
+            color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .back-button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: #000000;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .article-date {
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-date">May 15, 2024</div>
+            <h1>Summer Grooming Tips for Your Pets</h1>
+        </div>
+
+        <div class="article-content">
+            <p>As temperatures rise, proper pet grooming becomes even more crucial. Here are our expert tips to keep your furry friends cool and comfortable during the summer months:</p>
+
+            <h2>1. Summer Coat Management</h2>
+            <p>Many dog breeds benefit from a summer haircut to prevent overheating. However, never shave your pet completely as their coat provides protection from sunburn. For cats, regular brushing is essential to remove loose fur and prevent matting.</p>
+
+            <h2>2. Paw Care</h2>
+            <p>Summer means hot pavement that can burn your pet's paws. Trim their nails regularly and consider applying paw balm to protect their pads from rough surfaces.</p>
+
+            <h2>3. Pest Prevention</h2>
+            <p>Summer brings fleas, ticks, and other parasites. Regular grooming helps spot these pests early. Consider using natural flea repellents and maintaining your pet's coat to reduce infestations.</p>
+
+            <h2>4. Ear Care</h2>
+            <p>Swimming and humidity can lead to ear infections. Clean your pet's ears regularly and keep them dry to prevent issues.</p>
+
+            <h2>5. Hydration Tips</h2>
+            <p>While not directly related to grooming, proper hydration is crucial. Always ensure your pet has access to fresh water, especially after grooming sessions.</p>
+        </div>
+
+        <a href="news.html" class="back-button">Back to News</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

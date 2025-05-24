@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - FAQ</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: rgba(255, 105, 180, 0.3);
+            --background-dark: rgba(0, 0, 0, 0.8);
+            --background-light: rgba(0, 0, 0, 0.1);
+            --text-color: white;
+            --border-radius: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--background-dark);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--background-light);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+        }
+
+        /* FAQ Section */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .faq-question:hover {
+            background: var(--background-dark);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .faq-category {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Frequently Asked Questions</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="faq-section">
+            <h2 class="faq-category">General Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How often should I groom my pet?</div>
+                <div class="faq-answer">
+                    The frequency of grooming depends on your pet's breed, coat type, and lifestyle. Generally:
+                    <br><br>
+                    • Short-haired breeds: Every 4-8 weeks
+                    <br>
+                    • Long-haired breeds: Every 2-6 weeks
+                    <br>
+                    • Regular brushing at home is recommended between professional grooming sessions
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What services are included in basic grooming?</div>
+                <div class="faq-answer">
+                    Our basic grooming package includes:
+                    <br><br>
+                    • Bath with premium shampoo
+                    <br>
+                    • Blow dry and brush out
+                    <br>
+                    • Nail trimming
+                    <br>
+                    • Ear cleaning
+                    <br>
+                    • Sanitary trim
+                </div>
+            </div>
+
+            <h2 class="faq-category">Appointments & Pricing</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How long does a grooming session take?</div>
+                <div class="faq-answer">
+                    A typical grooming session takes 2-3 hours, depending on your pet's size, coat condition, and the services requested. We prioritize quality and your pet's comfort over speed.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you accept walk-ins?</div>
+                <div class="faq-answer">
+                    While we do accept walk-ins based on availability, we highly recommend scheduling an appointment to ensure we can accommodate you at your preferred time.
+                </div>
+            </div>
+
+            <h2 class="faq-category">Pet Care & Safety</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Are your groomers certified?</div>
+                <div class="faq-answer">
+                    Yes, all our groomers are professionally certified and have extensive experience in pet grooming. They regularly attend training sessions to stay updated with the latest grooming techniques and safety practices.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What precautions do you take for anxious pets?</div>
+                <div class="faq-answer">
+                    We understand that some pets may feel anxious during grooming. Our staff is trained to handle nervous pets with extra care and patience. We use calming techniques and can adjust the grooming process to make your pet feel more comfortable.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add click event to FAQ questions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Toggle answer visibility
+                answer.style.display = isOpen ? 'none' : 'block';
+                
+                // Toggle plus/minus sign
+                question.style.setProperty('--symbol', isOpen ? '+' : '-');
+            });
+        });
+
+        // Hide all answers initially
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html> 

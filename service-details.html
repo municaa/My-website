@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - Service Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.1);
+        }
+
+        nav a.active {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.15);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+        }
+
+        .header h1 {
+            color: #FF69B4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+            margin: 20px auto;
+        }
+
+        /* Service Details Container */
+        .service-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .service-details {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .service-details h2 {
+            color: #FF69B4;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-details p {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-details ul li {
+            color: white;
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-details ul li::before {
+            content: '🐾';
+            margin-right: 10px;
+            color: #FF69B4;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #FF1493;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .service-details {
+                padding: 1rem;
+            }
+
+            .service-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Service Details</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="service-details-container">
+        <div class="service-details">
+            <img src="https://images.unsplash.com/photo-1516734212186-65266f08a870" alt="Service Image" class="service-image">
+            <h2>Service Name</h2>
+            <p>Detailed description of the service goes here. This section will provide comprehensive information about the service, including what it entails, the benefits, and any special considerations.</p>
+            
+            <h3>What's Included</h3>
+            <ul>
+                <li>Service Component 1</li>
+                <li>Service Component 2</li>
+                <li>Service Component 3</li>
+                <li>Service Component 4</li>
+            </ul>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li>Benefit 1</li>
+                <li>Benefit 2</li>
+                <li>Benefit 3</li>
+            </ul>
+
+            <h3>Special Notes</h3>
+            <ul>
+                <li>Note 1</li>
+                <li>Note 2</li>
+                <li>Note 3</li>
+            </ul>
+
+            <a href="services.html" class="back-button">Back to Services</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

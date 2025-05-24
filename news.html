@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - News & Blog</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: rgba(255, 105, 180, 0.3);
+            --background-dark: rgba(0, 0, 0, 0.8);
+            --background-light: rgba(0, 0, 0, 0.1);
+            --text-color: white;
+            --border-radius: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--background-dark);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--background-light);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+        }
+
+        /* Blog Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            border: 2px solid var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            transition: all var(--transition-speed) ease;
+            
+        }
+
+        .read-more:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html" class="active">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>News & Blog</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee" alt="Dog grooming" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">May 15, 2024</div>
+                    <h3>Summer Grooming Tips for Your Pets</h3>
+                    <p>As summer approaches, learn how to keep your pets cool and comfortable with our expert grooming tips.</p>
+                    <a href="article-summer-grooming.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="cat.jpg" alt="Cat grooming" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">March 10, 2024</div>
+                    <h3>New Spa Treatment Services</h3>
+                    <p>Introducing our new luxury spa treatments for pets, including aromatherapy and hydrotherapy sessions.</p>
+                    <a href="article-spa-treatments.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1527526029430-319f10814151" alt="Pet products" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">March 1, 2024</div>
+                    <h3>Best Products for Pet Grooming</h3>
+                    <p>Discover our recommended products for maintaining your pet's hygiene at home between professional grooming sessions.</p>
+                    <a href="article-best-products.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="dog1.jpg" alt="Luxury pet spa" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">April 20, 2024</div>
+                    <h3>Luxury Pet Spa Grand Opening</h3>
+                    <p>Join us for the grand opening of our new luxury pet spa facility with state-of-the-art grooming equipment.</p>
+                    <a href="article-spa-grand-opening.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="grromcat.jpg" alt="Dog training" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">February 15, 2024</div>
+                    <h3>Grooming and Training: The Perfect Combination</h3>
+                    <p>Learn how proper grooming can enhance your pet's behavior and training outcomes.</p>
+                    <a href="article-grooming-training.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1570824104453-508955ab713e" alt="Pet care" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">January 30, 2024</div>
+                    <h3>Winter Pet Care Tips</h3>
+                    <p>Keep your pets healthy and comfortable during the colder months with our expert grooming advice.</p>
+                    <a href="article-winter-care.html" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

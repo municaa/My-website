@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - Contact Us</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: rgba(255, 105, 180, 0.3);
+            --background-dark: rgba(0, 0, 0, 0.8);
+            --background-light: rgba(0, 0, 0, 0.1);
+            --text-color: white;
+            --border-radius: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--background-dark);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--background-light);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #FF69B4;
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            width: 50px;
+            height: 2px;
+            background-color: #FF69B4;
+            margin: 20px auto;
+        }
+
+        /* Contact Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .contact-info h2 {
+            color: #FF69B4;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #FF69B4;
+        }
+
+        .contact-details i {
+            color: #FF69B4;
+            font-size: 1.4rem;
+        }
+
+        .contact-details a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+
+        /* Form Styles */
+        .contact-form {
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .contact-form h2 {
+            color: #FF69B4;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #FF69B4;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF69B4;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 105, 180, 0.6);
+        }
+
+        .submit-btn {
+            background: transparent;
+            border: 2px solid #FF69B4;
+            color: #FF69B4;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #FF69B4;
+            color: white;
+        }
+
+        .select-container {
+            position: relative;
+        }
+
+        .service-select {
+            background: rgba(0, 0, 0, 0.1);
+            color: white;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0.8rem;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: var(--border-radius);
+            width: 100%;
+            transition: all var(--transition-speed) ease;
+            font-size: 1rem;
+        }
+
+        .service-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+        }
+
+        .select-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FF69B4;
+            pointer-events: none;
+        }
+
+        .service-select option {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem;
+        }
+
+        .service-select option:hover {
+            background: #FF69B4;
+            color: white;
+        }
+
+        /* Success Message Animation */
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(40, 40, 40, 0.95));
+            color: #FF69B4;
+            padding: 35px 50px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            border: 2px solid #FF69B4;
+        }
+
+        .success-popup::before {
+            content: '🐾';
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .success-popup h3 {
+            color: #FF69B4;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+        }
+
+        .success-popup p {
+            color: #FF69B4;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .success-popup .email-note {
+            background: rgba(255, 105, 180, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: 1rem;
+            border: 1px solid #FF69B4;
+            color: #FF69B4;
+        }
+
+        #success:target {
+            opacity: 1;
+            visibility: visible;
+            animation: showAndHide 10s forwards;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        #success:target ~ .overlay {
+            opacity: 1;
+            visibility: visible;
+            animation: fadeOverlay 7s forwards;
+        }
+
+        @keyframes showAndHide {
+            0%, 85% {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        @keyframes fadeOverlay {
+            0%, 85% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Close button for testing */
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #FF69B4;
+            text-decoration: none;
+            font-size: 1.4rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .close-popup:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Business Hours */
+        .business-hours {
+            margin-top: 1.5rem;
+        }
+
+        .business-hours h3 {
+            color: #FF69B4;
+            margin-bottom: 1rem;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            color: #FF69B4;
+        }
+
+        .hours-list li span:first-child {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #FF69B4;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Contact Us</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <ul class="contact-details">
+                    <li>
+                        <i>📱</i>
+                        <a href="tel:09129338905">0912 933 8905</a>
+                    </li>
+                    <li>
+                        <i>✉️</i>
+                        <a href="mailto:monicalacrefernando@gmail.com">monicalacrefernando@gmail.com</a>
+                    </li>
+                    <li>
+                        <i>📍</i>
+                        <address style="font-style: normal;">
+                            Blk 12 Lot 7, Paws Street,<br>
+                            Barangay Balibago, Angeles City<br>
+                            Pampanga, 2009<br>
+                            Philippines
+                        </address>
+                    </li>
+                </ul>
+
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Monday - Friday</span>
+                            <span>By Appointment</span>
+                        </li>
+                        <li>
+                            <span>Saturday</span>
+                            <span>9:00 AM - 5:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Sunday</span>
+                            <span>By Appointment</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form id="contact-form" action="#success">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pet-type">Pet Type</label>
+                        <input type="text" id="pet-type" name="pet-type" placeholder="e.g., Dog, Cat">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message and Services that you want to avail</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Popup -->
+    <div id="success" class="success-popup">
+        <h3>Pawsome!</h3>
+        <p>Your message has been successfully sent to our grooming team!</p>
+        <div class="email-note">
+            Please check your email inbox. We'll send you a confirmation with your appointment details within 24 hours. 
+            <br><br>
+            Can't wait to pamper your furry friend! 🐱🐶
+        </div>
+        <a href="#" class="close-popup">&times;</a>
+    </div>
+    <div class="overlay"></div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

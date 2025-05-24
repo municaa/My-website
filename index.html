@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.1);
+        }
+
+        nav a.active {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.15);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            color: #FF69B4;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+            margin: 20px auto;
+        }
+
+        /* Features Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+        }
+
+        .card h3 {
+            color: #FF69B4;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #FF69B4;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Button Styling */
+        .btn {
+            background: transparent;
+            border: 2px solid #FF69B4;
+            color: #FF69B4;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #FF69B4;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Additional Background Sections */
+        .section {
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .welcome-section {
+            background: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy') center/cover fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+        }
+
+        .services-preview {
+            background: url('https://images.unsplash.com/photo-1516734212186-65266f08a870?q=80&auto=format&crop=entropy') center/cover fixed;
+            padding: 6rem 2rem;
+        }
+
+        .testimonial-preview {
+            background: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&auto=format&crop=entropy') center/cover fixed;
+            padding: 6rem 2rem;
+        }
+
+        .contact-preview {
+            background: url('https://images.unsplash.com/photo-1591946614720-90a587da4a36?q=80&auto=format&crop=entropy') center/cover fixed;
+            padding: 6rem 2rem;
+        }
+
+        /* Enhanced Cards */
+        .service-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1rem;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FF69B4;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            border: 2px solid #FF69B4;
+            padding: 10px;
+        }
+
+        .service-card h3 {
+            color: #FF69B4;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Section Titles */
+        .section-title {
+            color: #FF69B4;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+        }
+
+        /* Floating Elements */
+        .floating-paw {
+            position: absolute;
+            font-size: 40px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.2;
+            color: #FF69B4;
+        }
+
+        .paw1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .paw2 { top: 20%; right: 20%; animation-delay: 1s; }
+        .paw3 { bottom: 30%; left: 15%; animation-delay: 2s; }
+        .paw4 { bottom: 10%; right: 10%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Package Cards */
+        .package-section {
+            background: url('https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?q=80&auto=format&crop=entropy') center/cover fixed;
+            padding: 6rem 2rem;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .package-card {
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .package-card:hover::before {
+            left: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            border-color: #FF69B4;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        .package-name {
+            color: #FF69B4;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .package-price {
+            color: white;
+            font-size: 2rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 2rem 0;
+            padding: 0;
+        }
+
+        .package-features li {
+            color: white;
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-tag {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #FF69B4;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Additional Services */
+        .additional-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: left;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .service-item h4 {
+            color: #FF69B4;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .service-item p {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            color: #FF69B4;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <section class="section welcome-section">
+            <div class="section-content">
+                <h1>Welcome to Pawsome Grooming Services</h1>
+                <div class="separator"></div>
+                <p>Professional Pet Grooming Services for Your Furry Friends</p>
+                <div class="quote">"Every pet deserves to look Pawfectly beautiful"</div>
+                <a href="contact.html" class="btn">Book Appointment</a>
+            </div>
+            <div class="floating-paw paw1">🐾</div>
+            <div class="floating-paw paw2">🐾</div>
+            <div class="floating-paw paw3">🐾</div>
+            <div class="floating-paw paw4">🐾</div>
+        </section>
+
+        <section class="section services-preview">
+            <div class="section-content">
+                <h2 class="section-title">Our Services</h2>
+                <div class="features">
+                    <div class="service-card">
+                        <img src="cat 1.jpg" alt="Grooming">
+                        <h3>Professional Care</h3>
+                        <p>Our certified pet groomers bring years of experience and a gentle touch to ensure your pet's comfort and style.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=80" alt="Quality">
+                        <h3>Quality Service</h3>
+                        <p>We use only premium grooming products and state-of-the-art equipment for the best care possible.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?q=80&w=80" alt="Happy Pets">
+                        <h3>Happy Pets</h3>
+                        <p>Our stress-free environment and caring approach keeps your pets comfortable and happy throughout their visit.</p>
+                    </div>
+                </div>
+                <a href="services.html" class="btn">View All Services</a>
+            </div>
+        </section>
+
+        <section class="section testimonial-preview">
+            <div class="section-content">
+                <h2 class="section-title">Happy Customers</h2>
+                <div class="features">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=80" alt="Happy Dog">
+                        <h3>Exceptional Service</h3>
+                        <p>"My dog looks amazing after every visit! The team is so caring and professional."</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=80" alt="Happy Cat">
+                        <h3>Great Experience</h3>
+                        <p>"They really know how to handle cats with care. Best grooming service ever!"</p>
+                    </div>
+                </div>
+                <a href="testimonials.html" class="btn">Read More Reviews</a>
+            </div>
+        </section>
+
+        <section class="section contact-preview">
+            <div class="section-content">
+                <h2 class="section-title">Ready to Book?</h2>
+                <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem;">Give your pet the pampering they deserve!</p>
+                <a href="contact.html" class="btn">Contact Us Now</a>
+            </div>
+        </section>
+
+        <section class="section package-section">
+            <div class="section-content">
+                <h2 class="section-title">Our Packages</h2>
+                <div class="packages">
+                    <div class="package-card">
+                        <div class="package-name">Basic Pawsome</div>
+                        <div class="package-price">₱500<span>/visit</span></div>
+                        <ul class="package-features">
+                            <li>Basic Bath & Blow Dry</li>
+                            <li>Brush Out</li>
+                            <li>Nail Trimming</li>
+                            <li>Ear Cleaning</li>
+                            <li>Basic Hygiene Trim</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Book Now</a>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-tag">POPULAR</div>
+                        <div class="package-name">Premium Pampering</div>
+                        <div class="package-price">₱800<span>/visit</span></div>
+                        <ul class="package-features">
+                            <li>Premium Shampoo & Conditioner</li>
+                            <li>Full Body Styling</li>
+                            <li>Nail Trimming & Filing</li>
+                            <li>Deep Ear Cleaning</li>
+                            <li>Teeth Brushing</li>
+                            <li>Paw Pad Treatment</li>
+                            <li>Perfume & Accessories</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Book Now</a>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-name">Luxury Spa Day</div>
+                        <div class="package-price">₱1,200<span>/visit</span></div>
+                        <ul class="package-features">
+                            <li>All Premium Services</li>
+                            <li>Medicated Bath (if needed)</li>
+                            <li>De-matting Treatment</li>
+                            <li>Pet Massage</li>
+                            <li>Facial Treatment</li>
+                            <li>Pawdicure with Polish</li>
+                            <li>Premium Accessories</li>
+                            <li>Take-home Care Kit</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Book Now</a>
+                    </div>
+                </div>
+
+                <h3 class="section-title" style="font-size: 2rem;">Additional Services</h3>
+                <div class="additional-services">
+                    <div class="service-item">
+                        <h4>De-matting Treatment</h4>
+                        <p>Special treatment for tangled and matted fur</p>
+                        <div class="service-price">From ₱300</div>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>Flea Treatment</h4>
+                        <p>Professional flea removal and prevention</p>
+                        <div class="service-price">From ₱400</div>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>Teeth Cleaning</h4>
+                        <p>Dental hygiene for fresh breath</p>
+                        <div class="service-price">From ₱250</div>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>Nail Art</h4>
+                        <p>Colorful and safe nail polish application</p>
+                        <div class="service-price">From ₱200</div>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>Pet Massage</h4>
+                        <p>Relaxing massage for your furry friend</p>
+                        <div class="service-price">From ₱350</div>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>Express Grooming</h4>
+                        <p>Quick touch-up between full grooming sessions</p>
+                        <div class="service-price">From ₱300</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - Claim Offer</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: rgba(255, 105, 180, 0.3);
+            --background-dark: rgba(0, 0, 0, 0.8);
+            --background-light: rgba(0, 0, 0, 0.1);
+            --text-color: white;
+            --border-radius: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--background-dark);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--background-light);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            background: var(--background-light);
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 20px auto;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Offer Details */
+        .offer-details {
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .offer-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-terms {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .offer-terms h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .offer-terms ul {
+            list-style: none;
+        }
+
+        .offer-terms li {
+            color: var(--text-color);
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .offer-terms li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Claim Form */
+        .claim-form {
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #FF69B4;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF69B4;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+
+        .form-group select option {
+            background: #000000;
+            color: white;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: transparent;
+            border: 2px solid #FF69B4;
+            color: #FF69B4;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #FF69B4;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Success Message */
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid #FF69B4;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .success-popup.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .success-popup h2 {
+            color: #FF69B4;
+            margin-bottom: 1rem;
+        }
+
+        .success-popup p {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-popup .code {
+            background: rgba(255, 105, 180, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: #FF69B4;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #FF69B4;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        /* Floating Paw Prints */
+        .floating-paws {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .paw {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.2);
+            animation: float-paw 15s linear infinite;
+            font-size: 24px;
+        }
+
+        .paw::after {
+            content: '🐾';
+        }
+
+        @keyframes float-paw {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Form Field Animations */
+        .form-group input,
+        .form-group select {
+            transition: all 0.3s ease;
+            transform-origin: left;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            transform: scale(1.02);
+        }
+
+        .form-group label {
+            position: relative;
+            padding-left: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group label::before {
+            content: '🐾';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-group:focus-within label {
+            padding-left: 35px;
+            color: #FF69B4;
+        }
+
+        .form-group:focus-within label::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Card Hover Effects */
+        .offer-details,
+        .claim-form {
+            transition: all 0.3s ease;
+        }
+
+        .offer-details:hover,
+        .claim-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+        }
+
+        /* Submit Button Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .submit-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 105, 180, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:active {
+            animation: pulse 0.3s ease;
+        }
+
+        /* Success Popup Animations */
+        .success-popup {
+            transform: translate(-50%, -50%) scale(0.9);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .success-popup.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .success-popup .code {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-popup .code::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 105, 180, 0.2),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Claim Your Offer</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="offer-details">
+            <h2 class="offer-title">First-Time Customer Discount</h2>
+            <p class="offer-description">Get 15% off on your first grooming session at Pawsome Grooming Services! This special offer is our way of welcoming new customers to experience our premium pet grooming services.</p>
+            
+            <div class="offer-terms">
+                <h3>Terms & Conditions</h3>
+                <ul>
+                    <li>Valid for first-time customers only</li>
+                    <li>Applicable to any grooming package</li>
+                    <li>Cannot be combined with other offers</li>
+                    <li>Must be used within 30 days of claiming</li>
+                    <li>One offer per pet</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="claim-form">
+            <form id="offerForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="petName">Pet's Name</label>
+                    <input type="text" id="petName" name="petName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="petType">Pet Type</label>
+                    <select id="petType" name="petType" required>
+                        <option value="">Select pet type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Preferred Package</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select a package</option>
+                        <option value="basic">Basic Pawsome (₱500)</option>
+                        <option value="premium">Premium Pampering (₱800)</option>
+                        <option value="luxury">Luxury Spa Day (₱1,200)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Claim Offer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="success-popup" id="successPopup">
+        <h2>🎉 Offer Claimed Successfully!</h2>
+        <p>Thank you for choosing Pawsome Grooming Services!</p>
+        <p>Your discount code is:</p>
+        <div class="code" id="discountCode"></div>
+        <p>We've sent the details to your email.</p>
+        <p>Please show this code during your visit.</p>
+        <div class="paw-container">
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+        </div>
+        <button onclick="closePopup()" class="submit-btn">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+
+    <div class="floating-paws"></div>
+
+    <script>
+        function generateDiscountCode() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let code = 'FIRST15-';
+            for (let i = 0; i < 6; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return code;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Generate unique discount code
+            const discountCode = generateDiscountCode();
+            document.getElementById('discountCode').textContent = discountCode;
+            
+            // Show success popup
+            document.getElementById('successPopup').classList.add('show');
+            
+            // Reset form
+            form.reset();
+            
+            return false;
+        }
+
+        function closePopup() {
+            document.getElementById('successPopup').classList.remove('show');
+        }
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+
+        // Add form field animation triggers
+        document.querySelectorAll('.form-group input, .form-group select').forEach(field => {
+            field.addEventListener('focus', () => {
+                field.closest('.form-group').classList.add('active');
+            });
+            
+            field.addEventListener('blur', () => {
+                if (!field.value) {
+                    field.closest('.form-group').classList.remove('active');
+                }
+            });
+        });
+
+        // Initialize floating paws
+        function createPaw() {
+            const paw = document.createElement('div');
+            paw.className = 'paw';
+            paw.style.left = Math.random() * 100 + 'vw';
+            paw.style.animationDuration = (Math.random() * 5 + 10) + 's';
+            document.querySelector('.floating-paws').appendChild(paw);
+            
+            // Remove paw after animation
+            setTimeout(() => {
+                paw.remove();
+            }, 15000);
+        }
+
+        // Create initial paws
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createPaw, i * 1000);
+        }
+
+        // Create paws periodically
+        setInterval(createPaw, 3000);
+
+        // Enhanced submit animation
+        document.querySelector('.submit-btn').addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 1s infinite';
+        });
+
+        document.querySelector('.submit-btn').addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+    </script>
+</body>
+</html> 

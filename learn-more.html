@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Program - Pawsome Grooming Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.1);
+        }
+
+        nav a.active {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.15);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+        }
+
+        .header h1 {
+            color: #FF69B4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+            margin: 20px auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .referral-content {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .referral-content h2 {
+            color: #FF69B4;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .referral-content p {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .referral-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .referral-content ul li {
+            color: white;
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .referral-content ul li::before {
+            content: '🐾';
+            margin-right: 10px;
+            color: #FF69B4;
+        }
+
+        .how-it-works {
+            background: rgba(255, 105, 180, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .how-it-works h3 {
+            color: #FF69B4;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works ul {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        .how-it-works li {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .benefits-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 105, 180, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .benefit-card h4 {
+            color: #FF69B4;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #FF1493;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .referral-content {
+                padding: 1rem;
+            }
+
+            .benefits-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Referral Program</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="referral-content">
+            <h2>Share the Pawsome Experience</h2>
+            <p>We believe in the power of sharing great experiences with others. That's why we've created our referral program to reward you for introducing your friends and family to our exceptional pet grooming services.</p>
+
+            <div class="how-it-works">
+                <h3>How It Works</h3>
+                <ul>
+                    <li>1. Refer a friend to Pawsome Grooming Services</li>
+                    <li>2. Your friend books and completes their first grooming session</li>
+                    <li>3. Both you and your friend receive ₱200 off your next session</li>
+                    <li>4. The discount is automatically applied at checkout</li>
+                </ul>
+            </div>
+
+            <h2>Benefits for You and Your Referrals</h2>
+            <div class="benefits-box">
+                <div class="benefit-card">
+                    <h4>Easy Referral Process</h4>
+                    <p>Simple and straightforward referral system that benefits both you and your friends</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Generous Rewards</h4>
+                    <p>Get ₱200 off your next session for every successful referral</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>No Limits</h4>
+                    <p>Refer as many friends as you want and keep earning rewards</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Exclusive Offers</h4>
+                    <p>Access to special referral-only discounts and promotions</p>
+                </div>
+            </div>
+
+            <h2>Terms & Conditions</h2>
+            <ul>
+                <li>Referral reward applies to first-time customers only</li>
+                <li>Both you and your referral must be existing customers</li>
+                <li>Rewards are valid for 3 months from the date of referral</li>
+                <li>Cannot be combined with other promotions</li>
+                <li>We reserve the right to modify or terminate the program at any time</li>
+            </ul>
+
+           
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
