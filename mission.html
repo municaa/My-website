@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawsome Grooming Services - About Us</title>
+    <title>Pawsome Grooming Services - Mission & Vision</title>
     <style>
         * {
             margin: 0;
@@ -35,6 +35,10 @@
             z-index: -1;
         }
 
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         /* Navigation */
         nav {
             background-color: rgba(0, 0, 0, 0.9);
@@ -60,13 +64,10 @@
             font-size: 13px;
             padding: 8px 15px;
             border-radius: 20px;
-            transition: all 0.3s ease;
+         
         }
 
-        nav a:hover {
-            color: #FF69B4;
-            background: rgba(255, 105, 180, 0.1);
-        }
+       
 
         nav a.active {
             color: #FF69B4;
@@ -78,6 +79,8 @@
         .header {
             text-align: center;
             padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b') center/cover;
         }
 
         .header h1 {
@@ -101,52 +104,70 @@
             padding: 2rem;
         }
 
-        /* About Content */
-        .about-content {
+        /* Mission & Vision */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
             background: rgba(0, 0, 0, 0.8);
             border-radius: 20px;
             padding: 2rem;
-            margin-bottom: 2rem;
             border: 1px solid rgba(255, 105, 180, 0.3);
-            line-height: 1.6;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
-        /* Team Section */
-        .team-section {
+      
+
+        .card h2 {
+            color: #FF69B4;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            margin-top: 4rem;
+        }
+
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .team-member {
+        .value-card {
             background: rgba(0, 0, 0, 0.8);
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid rgba(255, 105, 180, 0.3);
+        
             text-align: center;
-           
         }
 
-       
-        
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            object-fit: cover;
-            border: 3px solid #FF69B4;
-        }
-
-        .team-member h3 {
+ 
+        .value-card h3 {
             color: #FF69B4;
-            margin-bottom: 0.5rem;
             font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        
+        .value-card p {
+            color: white;
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             background-color: rgba(0, 0, 0, 0.9);
@@ -158,16 +179,7 @@
         }
 
         
-        
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
+      
             nav a {
                 font-size: 12px;
                 padding: 6px 12px;
@@ -177,20 +189,20 @@
                 padding: 1rem;
             }
 
-            .team-section {
+            .mission-vision-grid {
                 grid-template-columns: 1fr;
             }
-        }
+        
     </style>
 </head>
 <body>
-    <!--this section is for navigation bar-->
+     <!--this section is for navigation bar-->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="mission.html" class="active">Mission & Vision</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -200,79 +212,54 @@
         </ul>
     </nav>
 
-    <!--this is for header section-->
     <div class="header">
-        <h1>About Us</h1>
+        <h1>Mission & Vision</h1>
         <div class="separator"></div>
     </div>
 
     <div class="container">
-        <div class="about-content">
-            <p>At Pawsome Grooming Services, we believe every pet deserves to look and feel their best. With over 10 years of experience, our certified groomers provide top-quality grooming services in a safe and comfortable environment.</p>
-            <br>
-            <p>Our state-of-the-art facility is designed to ensure your pets feel relaxed and pampered throughout their grooming experience. We use only premium, pet-safe products and follow the highest standards of cleanliness and safety.</p>
+        <div class="mission-vision-grid">
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>To provide exceptional pet grooming services that enhance the well-being and happiness of pets while exceeding the expectations of their owners through professional care, attention to detail, and a loving environment.</p>
+            </div>
+
+            <div class="card">
+                <h2>Our Vision</h2>
+                <p>To be the leading pet grooming service provider, recognized for our commitment to excellence, innovation in pet care, and creating lasting relationships with pets and their families.</p>
+            </div>
         </div>
 
-        <div class="header">
-            <h1>Meet Our Team</h1>
-            <div class="separator"></div>
-        </div>
+        <div class="values-section">
+            <div class="header">
+                <h1>Our Core Values</h1>
+                <div class="separator"></div>
+            </div>
 
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Compassion</h3>
+                    <p>We treat every pet with love, patience, and understanding, ensuring their comfort and well-being throughout their grooming experience.</p>
+                </div>
 
-        <!--team member-->
-        <div class="team-section">
-            <div class="team-member">
-                <img src="https://i.pinimg.com/736x/47/b9/48/47b948e97e85e513f781e0274c982cd8.jpg" alt="Jai">
-                <h3>Zeah </h3>
-                <p>Head Groomer</p>
-                <p>18 years experience</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.pinimg.com/736x/0a/62/8f/0a628f9518b80cd619676aa1a0831bd3.jpg" alt="Michael">
-                <h3>Michael </h3>
-                <p>Head Groomer</p>
-                <p>17 years experience</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.pinimg.com/736x/5d/8c/3a/5d8c3a2170c6e0d87eae4b8cbac7daec.jpg" alt="Zaera">
-                <h3>Zaera</h3>
-                <p>Senior Groomer</p>
-                <p>15 years experience</p>
-            </div>
-             <div class="team-member">
-                <img src="https://i.pinimg.com/736x/0d/61/24/0d6124398193f1ad563e403b7ac965d9.jpg" alt="Nathan">
-                <h3>Nathan</h3>
-                <p>Senior Groomer</p>
-                <p>15 years experience</p>
-            </div>
-             <div class="team-member">
-                <img src="https://i.pinimg.com/736x/21/cc/5b/21cc5b770c93913f864a3c11da00ca16.jpg" alt="Aaron">
-                <h3>Aaron</h3>
-                <p>Pet Stylist</p>
-                <p>5 years experience</p>
-            </div>
-             <div class="team-member">
-                <img src="https://i.pinimg.com/736x/ac/a5/cf/aca5cf816eee595d2139dc94954cad26.jpg" alt="Kevin">
-                <h3>Kevin</h3>
-                <p>Pet Stylist</p>
-                <p>9 years experience</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.pinimg.com/736x/00/b4/f9/00b4f9696b3b9cc0236ca66524c54ff1.jpg" alt="Sam">
-                <h3>Sam</h3>
-                <p>Pet Stylist</p>
-                <p>10 years experience</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.pinimg.com/736x/42/19/8c/42198cd056406bc98c957dd78d97f1f2.jpg" alt="Elisse">
-                <h3>Elisse</h3>
-                <p>Pet Stylist</p>
-                <p>9 years experience</p>
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest standards in pet grooming, continuously improving our skills and using premium products and techniques.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Safety</h3>
+                    <p>The safety and security of your pets is our top priority, maintaining a clean and stress-free environment at all times.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with honesty, transparency, and ethical practices, building trust with our clients and their pets.</p>
+                </div>
             </div>
         </div>
     </div>
- 
-    <!--footer-->
+
     <footer>
         <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
     </footer>

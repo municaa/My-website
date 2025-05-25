@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawsome Grooming Services - FAQ</title>
     <style>
+
+        /* colors */
         :root {
             --primary-color: #FF69B4;
             --secondary-color: rgba(255, 105, 180, 0.3);
@@ -14,7 +16,8 @@
             --border-radius: 20px;
             --transition-speed: 0.3s;
         }
-
+          
+        /* reset */
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +25,7 @@
             font-family: 'Arial', sans-serif;
         }
 
+        /* body */
         body {
             background-color: #000000;
             color: white;
@@ -48,8 +52,10 @@
         body::-webkit-scrollbar {
             display: none;
         }
+           
 
-        /* Navigation */
+        /* navigation bar */
+        
         nav {
             background-color: var(--background-dark);
             padding: 1rem;
@@ -113,27 +119,36 @@
 
         /* FAQ Section */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         .faq-section {
-            margin-top: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-category {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 2.5rem 0 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            font-weight: bold;
         }
 
         .faq-item {
-            background: var(--background-light);
-            border: 1px solid var(--secondary-color);
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
         }
 
         .faq-question {
-            padding: 1.5rem;
+            padding: 0.5rem 0;
             cursor: pointer;
-            position: relative;
             color: var(--primary-color);
             font-size: 1.1rem;
             font-weight: bold;
@@ -141,23 +156,14 @@
         }
 
         .faq-question:hover {
-            background: var(--background-dark);
-        }
-
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--primary-color);
+            color: white;
         }
 
         .faq-answer {
-            padding: 0 1.5rem 1.5rem;
+            padding: 1rem 0;
             color: white;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         .faq-category {
@@ -180,6 +186,7 @@
     </style>
 </head>
 <body>
+     <!--this section is for navigation bar-->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -273,21 +280,20 @@
     </footer>
 
     <script>
-        // Add click event to FAQ questions
+     
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isOpen = answer.style.display === 'block';
                 
-                // Toggle answer visibility
                 answer.style.display = isOpen ? 'none' : 'block';
                 
-                // Toggle plus/minus sign
+                
                 question.style.setProperty('--symbol', isOpen ? '+' : '-');
             });
         });
 
-        // Hide all answers initially
+    
         document.querySelectorAll('.faq-answer').forEach(answer => {
             answer.style.display = 'none';
         });
